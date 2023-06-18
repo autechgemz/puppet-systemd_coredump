@@ -1,0 +1,19 @@
+---
+
+systemd_coredump::ensure: 'present'
+
+systemd_coredump::package_name:
+  - systemd-coredump
+systemd_coredump::package_ensure: 'installed'
+systemd_coredump::install_options: [] 
+
+systemd_coredump::config_file: '/etc/systemd/coredump.conf'
+systemd_coredump::config_hash:
+  Storage: 'external'
+  Compress: 'yes'
+  ProcessSizeMax: '2G'
+  ExternalSizeMax: '2G'
+  JournalSizeMax: '767M'
+
+systemd_coredump::dropin_config_dir: '/etc/systemd/coredump.conf.d'
+systemd_coredump::dropin_config_hash: {}

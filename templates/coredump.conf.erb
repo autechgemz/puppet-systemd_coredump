@@ -1,0 +1,6 @@
+# Managed by Puppet
+
+[Coredump]
+<% scope['systemd_coredump::config_hash'].each do |key, values| -%>
+<%= key %>=<%= values %>
+<% end -%>
